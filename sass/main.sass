@@ -1,0 +1,410 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $gray-text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.grid
+	display: grid
+
+
+
+// custom
+
+.header
+	background-color: #000
+	color: $white-text
+	grid-template-columns: 1fr 1fr
+	padding: 20px 70px
+	align-content: center
+	align-items: end
+	&-left-side
+		align-content: center
+		div
+			display: inline-block
+			padding: 10px
+		.phone
+			border-right: 1px solid #464646
+			padding-right: 40px
+		.mail
+			padding-left: 40px
+		.fas
+			padding-right: 20px
+	&-right-side
+		justify-self: end
+		display: grid
+	ul
+		list-style: none
+		padding: 0
+		margin: 0
+		li
+			display: inline-block
+			padding: 10px
+			a
+				color: $white-text
+			&:hover
+				a
+					color: darken($white-text, 25%)
+.nevigation
+	padding: 40px 70px
+	grid-template-columns: 0.75fr 2fr 0.75fr
+	align-content: center
+	align-items: center
+	.logo
+		a
+			color: $accent
+			font-size: 24px
+			font-weight: 400
+			line-height: 14px
+			text-transform: uppercase
+			font-family: $PoppinsSemiBold
+			letter-spacing: 0.1px
+			font-weight: 900
+			padding-top: 6px
+			&:hover
+				text-decoration: none
+			span
+				color: #000000
+				font-family: $PoppinsLight
+				font-weight: 300
+	.categories
+		align-content: center
+		text-align: center
+		padding-top: 5px
+		ul
+			margin: 0
+			padding: 0
+			list-style: none
+			li
+				display: inline-block
+				margin: 0px 25px
+				&:first-child
+					margin-left: 0
+				&:last-child
+					margin-right: 0
+				a
+					font-family: $PoppinsLight
+					font-size: 16px
+					font-weight: 800
+					line-height: 14px
+					text-transform: uppercase
+					color:  #3f4853
+					transition: color 0.25s ease
+					&:active, &:hover, &:focus
+						color: $accent
+						text-decoration: none
+						transition: color 0.25s ease
+
+	.menu-block
+		cursor: pointer
+		justify-self: end
+		&>div
+			display: inline-block
+		.cart
+			margin-right: 25px
+			.fas
+				position: relative
+				font-size: 16px
+				color: $gray-text
+				.shoped-items
+					position: absolute
+					background: $accent
+					border-radius: 50%
+					top: -15px
+					right: -15px
+					padding: 5px 7px
+					font-size: 14px
+					color: $white-text
+					font-family: $PoppinsLight
+		.search
+			.fas
+				font-size: 16px
+				color: $gray-text
+				margin: 0 30px
+		.menu
+			.hamburger
+				outline: none
+				&:focus
+				outline: none
+				.hamburger-box
+					width: 23px
+					.hamburger-inner
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+	width: 14px
+.hamburger--collapse .hamburger-inner::after
+	top: -5px
+
+.carusel
+	.owl-item
+		max-height: 1000px
+		height: 1000px
+	.owl-items
+		position: relative
+		.owl-text
+			color: $white-text
+			position: absolute
+			top: 30px
+			left: 30px
+			font-size: 45px
+			background: rgba(0,0,0,0.5)
+			display: inline-block
+			border-radius: 35px
+			padding: 20px
+
+
+.best-sellers
+	grid-template-columns: 1fr 4fr 
+	padding: 100px 70px 69px
+	&-text
+		color: $gray-text
+		font-family: $PoppinsLight
+		font-size: 30px
+		font-weight: 400
+		line-height: 24px
+		letter-spacing: 1.5px
+		padding: 100px 0
+		align-self: center
+		h2
+			text-transform: uppercase
+			font-weight: 900
+		span
+			color: $accent
+			font-family: $droidregular
+			font-size: 14px
+			font-style: italic
+			line-height: 24px
+			letter-spacing: 0.35px
+		p
+			color: $gray-text
+			font-family: $PoppinsLight
+			font-size: 14px
+			margin-top: 35px
+			font-weight: 500
+			line-height: 24px
+			letter-spacing: 0.35px
+	&-title
+		font-family: $PoppinsSemiBold
+		font-size: 14px
+		color: $gray-text
+	&-price
+		color: $accent
+		font-family: $droidregular
+	&-stars
+		color: $yellowColor
+
+.best-sellers-slider
+	grid-template-columns: repeat(4, 1fr)
+	padding-left: 60px
+	&-img
+		margin-bottom: 22px
+
+.best-sellers-slider-item
+	position: relative
+	cursor: pointer
+	.hart,
+	.compare,
+	.cart-icon
+		position: absolute
+		right: 10px
+		top: 0
+		color: $white-text
+		background-color: $accent
+		padding: 0 6px
+		cursor: pointer
+	.hart
+		top: 45px
+	&:hover
+		.hart,
+		// .compare,
+		.cart-icon
+			display: block !important
+	
+.advantages
+	background-color: #f5f6f9
+	grid-template-columns: repeat(4, 1fr)
+	align-content: center
+	align-items: center
+	padding: 50px 70px
+	&-wrapper
+		align-self: center
+		text-align: center
+	&-tittle
+		font-size: 18px
+		font-family: $PoppinsSemiBold
+		font-weight: bold
+		text-transform: uppercase
+		margin-top: 30px
+	&-text
+		font-size: 13px
+		font-family: $PoppinsLight
+.slogans
+	grid-template-columns: repeat(3, 1fr)
+	align-content: center
+	align-items: center
+	background-color: #2e3348
+	padding: 100px 0
+	&-img
+		align-self: center
+		text-align: center
+		transition: transform .25s ease
+		&:hover
+			transition: transform .25s ease
+			transform: scale(1.1)
+	
+.products
+	grid-template-columns: repeat(5, 1fr)
+	padding: 100px 70px
+	grid-gap: 30px
+
+.discount
+	grid-template-columns: 1fr 1fr
+	&-wrapper
+		background-color: rgba(46, 51, 72, .90)
+		// background-image: url(../img/slide5.png)
+		background-repeat:  no-repeat
+		background-position: center
+		background-size: cover
+		position: relative
+		color: #ffffff
+		padding: 65px 175px
+		align-items: center
+		justify-content: center
+	&-tittle
+		h4
+			font-size: 30px
+			font-family: $PoppinsRegular
+			font-weight: bold
+			text-align: center
+	.form-group
+		.form-control
+			width: 69%
+			height: 45px
+			display: inline-block
+			padding: 5px
+	.btn.btn-primary
+		width: 30%
+		display: inline-block
+		padding: 10.2px
+		background-color: #3cb878
+		border: none
+		color: #ffffff
+		text-transform: uppercase
+		font-size: 14px
+
+	.partners
+		grid-template-columns: repeat(4, 1fr)
+		padding: 100px 60px
+		align-content: center
+		align-items: center
+		background-color: #f5f6f9
+
+
+
+.confident
+	max-width: 1170px
+	align-content: center
+	justify-items: center
+	align-items: center
+	text-align: center
+	margin: 0 auto
+	grid-template-columns: 8fr 4fr
+	padding: 25px 0
+	&-text
+		font-size: 14px
+		font-family: "Roboto"
+		color: rgb(51, 51, 51)
+		line-height: 1.429
+		position: relative
+		width: 100%
+		&:after
+			content: ''
+			display: block
+			width: 1px
+			height: 100%
+			position: absolute
+			right: 0
+			top: 0
+			background-color: #eeeeee
+	&-social
+		grid-template-columns: repeat(5, 1fr)
+		grid-gap: 10px
+		text-align: center
+		width: 100%
+		a
+			color: $gray-text
+
+
+.contacts
+	grid-template-columns: repeat(4, 1fr)
+	justify-items: center
+	&-list
+		h2
+			font-size: 16px
+			font-family: "Poppins"
+			color: rgb(51, 51, 51)
+			font-weight: bold
+			text-transform: uppercase
+			line-height: 1.25
+			margin: 40px 0
+
+		ul
+			list-style: none
+			margin: 0
+			padding: 0
+		li
+			padding: 12.5px 0
+			a
+				font-size: 14px
+				font-family: "Roboto"
+				color: rgb(51, 51, 51)
+				line-height: 1.143
+				font-weight: 500
+				i
+					padding-right: 5px
+.maito
+	color: $accent
+
+footer
+	background-color: #000000
+	.confident
+		&-text
+			font-size: 14px
+			font-family: "Roboto"
+			color: rgb(119, 119, 119)
+			line-height: 1.929
+			&:after
+				display: none
+@import "media" // Always at the end
